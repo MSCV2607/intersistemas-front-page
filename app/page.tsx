@@ -1,16 +1,39 @@
 import Image from "next/image";
+import Carrusel from "../src/components/carrusel/carrusel";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center font-sans">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 sm:items-start">
-        <Image
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
+    <div className="flex min-h-screen flex-col items-center justify-start font-sans">
+      {/* Contenedor ancho para el carrusel: permite mayor max-width sin tocar el main */}
+      <div className="w-full flex justify-center">
+          <div className="w-full max-w-[1300px] px-4">
+          <Carrusel
+            slides={[
+              {
+                title: "La Gestión Inteligente que te Impulsa",
+                text: "Diseñamos aplicaciones donde la simplicidad se une a la flexibilidad y la eficiencia.",
+                imageSrc: "/next.svg",
+                titleSize: "56px",
+                textSize: "18px",
+                imageScale: "220%",
+                buttonText: "Conocé nuestras soluciones",
+                buttonHref: "/soluciones",
+              },
+              {
+                title: "Impulsa tu crecimiento",
+                text: "Soluciones a medida para acompañar el crecimiento de tu negocio.",
+                imageSrc: "/next.svg",
+                titleSize: "40px",
+                textSize: "16px",
+                imageScale: "120%",
+              },
+            ]}
+            interval={6000}
+            cardHeight="600px"
+          />
+        </div>
+      </div>
+      <main className="flex w-full max-w-3xl flex-col items-center justify-between py-32 px-16 sm:items-start">
         <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
           <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black">
             To get started, edit the page.tsx file.

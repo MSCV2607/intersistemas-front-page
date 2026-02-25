@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import styles from "./navbar.module.css";
 
 const Navbar: React.FC = () => {
@@ -8,7 +9,22 @@ const Navbar: React.FC = () => {
 		<header className={styles.wrapper}>
 			<div className={styles.container}>
 				<div className={styles.left}>
-					<span className={styles.logo}>LOGO</span>
+					<Link href="/" aria-label="Inicio" className={styles.logo}>
+						<div className={styles.logoImages}>
+							<Image
+								src="/logo/interSistemas-cmyk-imprimir_iso_1.png"
+								alt="InterSistemas iso"
+								width={56}
+								height={56}
+							/>
+							<Image
+								src="/logo/interSistemas-cmyk-imprimir_1.png"
+								alt="InterSistemas texto"
+								width={160}
+								height={56}
+							/>
+						</div>
+					</Link>
 				</div>
 				<div className={styles.spacer} />
 
