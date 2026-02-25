@@ -3,6 +3,10 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  /* Orange used across the site */
+  --color-orange: #ff8a00;
+  --color-orange-dark: #ff6a00;
+  --color-orange-light: #ffb380;
 }
 
 @theme inline {
