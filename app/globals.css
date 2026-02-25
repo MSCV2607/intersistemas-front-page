@@ -1,7 +1,8 @@
 @import "tailwindcss";
+@import "../src/styles/global.css";
 
 :root {
-  --background: #ffffff;
+  --background: var(--color-bg-light, #ffffff);
   --foreground: #171717;
   /* Orange used across the site */
   --color-orange: #ff8a00;
@@ -17,9 +18,25 @@
 }
 
 @media (prefers-color-scheme: dark) {
+  /* Mantener esquema claro: usar la variable global de fondo claro */
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: var(--color-bg-light, #ffffff);
+    --foreground: var(--color-text-dark, #333333);
+  }
+
+  /* Sobrescribir utilidades Tailwind comunes en modo oscuro para evitar fondos negros */
+  .dark\:bg-black,
+  .dark\:bg-white,
+  .dark\:bg-zinc-50,
+  .dark\:bg-zinc-900,
+  .dark\:bg-zinc-50 {
+    background-color: var(--color-bg-light, var(--background)) !important;
+  }
+
+  .dark\:text-zinc-50,
+  .dark\:text-zinc-400,
+  .dark\:text-zinc-600 {
+    color: var(--color-text-dark, var(--foreground)) !important;
   }
 }
 
@@ -27,4 +44,10 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Forzar fondo claro de la variable global incluso si el sistema está en modo oscuro */
+html, body, #__next {
+  background-color: var(--color-bg-light, var(--background)) !important;
+  min-height: 100vh;
 }
