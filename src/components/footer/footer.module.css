@@ -1,0 +1,22 @@
+/* Footer styles: fondo morado oscuro, texto blanco y línea divisoria */
+.container {
+	background-color: #2b0b3a;
+	color: #ffffff;
+	padding: 20px 0;
+	text-align: center;
+}
+.topText,
+.bottomText {
+	margin: 0;
+	font-weight: 600;
+	font-size: 1rem;
+}
+.divider {
+	width: 100vw;
+	height: 1px;
+	background-color: rgba(255, 255, 255, 0.18);
+	margin: 12px 0;
+	border: none;
+	margin-left: calc(50% - 50vw);
+}
+
